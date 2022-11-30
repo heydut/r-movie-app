@@ -1,0 +1,78 @@
+#home {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+#movie-night {
+  background: linear-gradient(
+    -45deg,
+    #ffa263,
+    #ff8635,
+    #ff6600,
+    #ff8635,
+    #ffa263
+  );
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 650px;
+  width: 650px;
+  position: relative;
+}
+
+#movie-night .movie-text {
+  margin-top: 200px;
+  margin-left: 25px;
+
+  text-align: center;
+  transform: rotate(-4deg);
+  z-index: 10;
+  width: 75%;
+}
+
+#movie-night h2 {
+  color: #4b4b4b;
+  font-size: 120px;
+  margin-bottom: -20px;
+}
+#movie-night p {
+  font-size: 26px;
+}
+
+#movie-night span {
+  color: #4b4b4b;
+  font-size: 26px;
+  font-weight: 600;
+  transition: 0.2s all ease-in;
+}
+
+#movie-night span:hover {
+  color: #ffa263;
+}
+
+.movie-img {
+  transform: rotate(-4deg);
+  width: 600px;
+
+  position: absolute;
+}
+
+/* (Down) Background gradient */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* (Up) Background gradient */

@@ -1,0 +1,49 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form h2 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.login-form .label-text {
+  color: rgba(128, 128, 128, 0.8);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.login-form input {
+  background-color: #f9f9f9;
+  border: 1px solid #d0d0d0;
+
+  color: #808080;
+  font-family: "Poppins", sans-serif;
+
+  margin-bottom: 15px;
+  padding: 7px 15px;
+}
+.login-form input:focus {
+  outline: 1px solid #ff6600;
+}
+
+.login-btn {
+  background-color: #ff6600;
+  border: none;
+  border-radius: 25px;
+
+  cursor: pointer;
+  color: #f9f9f9;
+  font-size: 16px;
+  font-weight: 600;
+
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px 20px;
+  transition: 0.5s all ease-in;
+}
+
+.login-btn:hover {
+  background-color: #ff8635;
+}

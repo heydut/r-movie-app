@@ -1,0 +1,92 @@
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.acess {
+  height: 100vh;
+}
+
+.acess-background {
+  background: linear-gradient(
+    -45deg,
+    #ffa263,
+    #ff8635,
+    #ff6600,
+    #ff8635,
+    #ffa263
+  );
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  border-radius: 15px;
+
+  height: 400px;
+  width: 700px;
+
+  position: relative;
+}
+
+/* ******* */
+.user-info-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #f9f9f9;
+  border-radius: 15px;
+
+  transition: all 0.8s;
+  height: 475px;
+  width: 300px;
+
+  position: absolute;
+}
+
+.user-info-r {
+  transform: translateX(150px);
+  /* right: 50px; */
+}
+
+.user-info-l {
+  transform: translateX(-150px);
+  /* left: 50px; */
+}
+
+/* ******* */
+
+.login-side,
+.singup-side {
+  flex-direction: column;
+
+  height: 100%;
+  width: 100%;
+}
+
+.login-side p,
+.singup-side p {
+  color: #f9f9f9;
+  font-size: 20px;
+}
+
+.login-side button,
+.singup-side button {
+  background-color: transparent;
+  border: 2px solid #f9f9f9;
+  border-radius: 25px;
+
+  cursor: pointer;
+  color: #f9f9f9;
+  font-size: 16px;
+  font-weight: 600;
+
+  margin-top: 25px;
+  padding: 10px 20px;
+  transition: 0.5s all ease-in;
+}
+
+.login-side button:hover,
+.singup-side button:hover {
+  background-color: #f9f9f9;
+  color: #ff6600;
+}
