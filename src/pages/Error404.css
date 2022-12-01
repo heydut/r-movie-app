@@ -1,5 +1,82 @@
 #error-page {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  height: 100vh;
+  width: 100vw;
+}
+
+.error-number {
+  font-size: 450px;
+  font-weight: 700;
+
+  margin: -100px auto -250px auto;
+
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.error-text {
+  color: #f8f8f8;
+  font-weight: 300;
+  line-height: 1.7;
+  text-align: center;
+
+  width: 550px;
+}
+
+.error-text h2,
+.error-text p {
+  margin-bottom: 20px;
+}
+
+.error-text button {
+  background-color: #ff6600;
+  border: none;
+  border-radius: 25px;
+
+  cursor: pointer;
+  color: #f9f9f9;
+  font-size: 16px;
+  font-weight: 600;
+
+  margin-top: 10px;
+  padding: 10px 20px;
+  transition: 0.5s all ease-in;
+}
+
+.error-text button:hover {
+  background-color: #ff8635;
+}
+
+@media screen and (max-width: 950px) {
+  .error-number {
+    font-size: 350px;
+
+    margin-bottom: -200px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .error-number {
+    font-size: 250px;
+
+    margin-bottom: -125px;
+  }
+
+  .error-text {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .error-number {
+    font-size: 200px;
+    margin-bottom: -100px;
+  }
+  .error-text {
+    width: 350px;
+  }
 }

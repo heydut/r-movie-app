@@ -10,7 +10,8 @@ export const loginUser = async (username, email, password, setter) => {
       }),
     });
     const data = await res.json();
-    setter(data.username);
+    return data;
+    // setter(data.username);
   } catch (error) {
     console.log(error);
   }
@@ -28,9 +29,10 @@ export const addUser = async (username, email, password, setter) => {
       }),
     });
     const data = await res.json();
-    setter(data.username);
+    return data;
+    // setter(data.username);
   } catch (error) {
-    console.log(error);
+    return console.log(error);
   }
 };
 

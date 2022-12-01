@@ -1,8 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { updateUser } from "../utils";
+// design
 import "./UpdateUser.css";
 import userimg from "../imgs/user.png";
+
+// libraries
+import React, { useState } from "react";
+
+// component
 import DeleteUser from "./DeleteUser";
+
+// backend component
+import { updateUser } from "../utils";
+
+//////////////////////////////////////////////////////////////
 
 const UpdateUser = ({ user }) => {
   const [username, setUsername] = useState();
@@ -25,43 +34,60 @@ const UpdateUser = ({ user }) => {
   };
 
   return (
-    <section id="user-card">
-      <div>
-        <div class="user-card-back">
-          <div class="user-card-front">
+    <section className="user-card container  flex-center">
+      <div className="">
+        <div className="user-card-bg flex-center">
+          <div className="user-card-info">
             <img src={userimg} alt="userimg" />
             <p>Hello, {user}!</p>
+            <button>Edit my account</button>
+
+            <DeleteUser user={user} />
+
+            <button>Back to home</button>
           </div>
-        </div>
-        <div class="user-card-text-bg">
-          <div class="user-card-text-front">
+          <div className="user-change-info-fake flex-center"></div>
+          <div className="user-change-info flex-center">
             <form onSubmit={updateUsername}>
               <label>
-                <div>Update your username:</div>
-                <input onChange={(e) => setUsername(e.target.value)}></input>
+                <div>Change username</div>
+                <input
+                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="Your new username"
+                ></input>
               </label>
-              <button type="submit">Update your username</button>
+              <button type="submit">
+                <i class="fa-solid fa-circle-check"></i>
+              </button>
             </form>
 
             <form onSubmit={updateEmail}>
               <label>
-                <div>Update your email:</div>
-                <input onChange={(e) => setEmail(e.target.value)}></input>
+                <div>Change email</div>
+
+                <input
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Your new email"
+                ></input>
               </label>
-              <button type="submit">Update your email</button>
+              <button type="submit">
+                <i class="fa-solid fa-circle-check"></i>
+              </button>
             </form>
 
             <form onSubmit={updatePassword}>
-              <label>
-                <div>Update your password:</div>
-                <input onChange={(e) => setPassword(e.target.value)}></input>
+              <div>Change password</div>
+
+              <label className="form-change">
+                <input
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Your new password"
+                ></input>
+                <button type="submit">
+                  <i class="fa-solid fa-circle-check"></i>
+                </button>
               </label>
-              <button type="submit">Update your password</button>
             </form>
-            <div>
-              <button>Back to home</button>
-              <DeleteUser user={user} />
-            </div>
           </div>
         </div>
       </div>

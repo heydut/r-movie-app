@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Login from "../components/Login";
 import Signup from "../components/Signup";
+import { User } from "../App";
 
 import "./Acess.css";
 
-const Acess = ({ getUser }) => {
-  const [user, setUser] = useState();
+const Acess = () => {
+  const context = useContext(User);
+
+  // const [user, setUser] = useState();
   const [side, setSide] = useState(true);
   const signUpButton = () => {
     setSide(false);
@@ -23,11 +26,11 @@ const Acess = ({ getUser }) => {
           >
             {side ? (
               <div className="user-info-login">
-                <Login setter={setUser} user={user} getUser={getUser} />
+                <Login setter={context.setUser} user={context.user} />
               </div>
             ) : (
               <div className="user-info-signup">
-                <Signup user={user} getUser={getUser} />
+                <Signup setter={context.setUser} user={context.user} />
               </div>
             )}
           </div>

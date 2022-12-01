@@ -1,8 +1,12 @@
+// design
 import "./Error404.css";
+
+// libraries
+import { WavyLink } from "react-wavy-transitions";
 
 const Error404 = () => {
   return (
-    <section className="container">
+    <section className="">
       <div id="error-page">
         <div className="error-number">404</div>
         <div className="error-text">
@@ -12,7 +16,9 @@ const Error404 = () => {
             the address, or the page has been moved to another URL. If you think
             this is an error contact support.
           </p>
-          <button>Take me back to home page</button>
+          <WavyLink direction="down" to="/" color="#2b2b2b">
+            <div>Take me back to home page</div>
+          </WavyLink>
         </div>
       </div>
     </section>

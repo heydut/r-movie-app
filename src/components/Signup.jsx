@@ -1,19 +1,30 @@
-import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
-import { addUser } from "../utils";
+// design
 import "./Signup.css";
 
-const Signup = ({ setter, getUser }) => {
+// libraries
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+// backend component
+import { addUser } from "../utils";
+
+const Signup = ({ setter }) => {
   const [username, setUsername] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  // const navigate = useNavigate();
+  // const [user, setUser] = useState();
+  const navigate = useNavigate();
 
-  const submitHandler = async (event) => {
-    event.preventDefault();
-    await addUser(username, email, password, setter);
-    // navigate("/library");
-    console.log("this console now");
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const response = await addUser(username, email, password, setter);
+
+    console.log("Response: ", response.user);
+    setter(response.user);
+
+    if (response.user) {
+      navigate("/library");
+    }
   };
 
   return (

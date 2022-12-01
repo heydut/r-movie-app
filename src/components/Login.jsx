@@ -1,27 +1,39 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { loginUser } from "../utils";
+// design
 import "./Login.css";
 
-const Login = ({ setter, user, getUser }) => {
+// libraries
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+// backend component
+import { loginUser } from "../utils";
+
+const Login = ({ setter }) => {
   const [username, setUsername] = useState();
-  const [email, setEmail] = useState();
+  const [email, setEmail] = useState(); // I'm not using email at login, just username/password
   const [password, setPassword] = useState();
-
-  const submitHandler = async (event) => {
-    event.preventDefault();
-    await loginUser(username, email, password, setter);
-  };
-
   const navigate = useNavigate();
-  const handleLogin = async () => {
-    if (user) {
-      await getUser(user);
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    const response = await loginUser(username, email, password, setter);
+
+    console.log("Response: ", response.username);
+    setter(response.username);
+
+    if (response.username) {
       navigate("/library");
-    } else {
-      console.log("no user found");
     }
   };
+
+  // const handleLogin = async () => {
+  //   if (user) {
+  //     await getUser(user);
+  //     navigate("/library");
+  //   } else {
+  //     console.log("no user found");
+  //   }
+  // };
 
   return (
     <section id="login-section">
@@ -42,7 +54,7 @@ const Login = ({ setter, user, getUser }) => {
             placeholder="password"
           />
         </label>
-        <button className="login-btn" type="submit" onClick={handleLogin}>
+        <button className="login-btn" type="submit">
           Login
         </button>
       </form>
